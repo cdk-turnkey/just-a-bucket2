@@ -62,6 +62,11 @@ jobs:
         run: |
           npx aws-cdk --version
           npx aws-cdk@latest --version
+          npx aws-cdk@2.9.0 --version
+          ls ~/.npm/_npx
+          node --version
+          npm --version
+          npx --version
           npx cdk --version
           npx cdk@latest --version
           npx cdk@2.8.0 --version
