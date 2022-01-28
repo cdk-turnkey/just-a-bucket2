@@ -60,6 +60,7 @@ jobs:
 
       - name: cdk version
         run: |
+          npx aws-cdk --version
           npx cdk --version
           npx cdk@latest --version
           npx cdk@2.8.0 --version
