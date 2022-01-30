@@ -1,5 +1,5 @@
-import { App, Stack, StackProps, RemovalPolicy, CfnOutput } from 'aws-cdk-lib';
-import { aws_s3 as s3 } from 'aws-cdk-lib';
+import { App, Stack, StackProps, RemovalPolicy, CfnOutput } from "aws-cdk-lib";
+import { aws_s3 as s3 } from "aws-cdk-lib";
 
 export interface AppStackProps extends StackProps {
   customProp?: string;
