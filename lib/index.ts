@@ -1,12 +1,11 @@
-import * as cdk from "@aws-cdk/core";
-import * as s3 from "@aws-cdk/aws-s3";
-import { RemovalPolicy } from "@aws-cdk/core";
+import { App, Stack, StackProps, RemovalPolicy, CfnOutput } from 'aws-cdk-lib';
+import { aws_s3 as s3 } from 'aws-cdk-lib';
 
-export interface StackProps extends cdk.StackProps {
+export interface AppStackProps extends StackProps {
   customProp?: string;
 }
-export class Stack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props: StackProps = {}) {
+export class AppStack extends Stack {
+  constructor(scope: App, id: string, props: AppStackProps = {}) {
     super(scope, id, props);
     const { customProp } = props;
     const defaultBucketProps = {
@@ -17,7 +16,7 @@ export class Stack extends cdk.Stack {
       ...defaultBucketProps,
       versioned: true,
     });
-    new cdk.CfnOutput(this, "BucketName", {
+    new CfnOutput(this, "BucketName", {
       value: bucket.bucketName,
     });
   }
