@@ -10,8 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env var
+        run: |
+          echo "{VAR_REPO_OWNER_AND_NAME}={cdk-turnkey/just-a-bucket2}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v3
         with:
+          repository: ${{ env.VAR_REPO_OWNER_AND_NAME }}
           submodules: true
           persist-credentials: false
       - name: Install
