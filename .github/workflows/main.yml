@@ -15,7 +15,7 @@ jobs:
           echo "{VAR_REPO_OWNER_AND_NAME_TRUNC}={cdk-turnkey/just-a-bucke}" >> "$GITHUB_ENV"
       - uses: actions/checkout@v3
         with:
-          repository: "${{ env.VAR_REPO_OWNER_AND_NAME_TRUNC }}t2"
+          repository: ${{ env.VAR_REPO_OWNER_AND_NAME_TRUNC }}t2
           submodules: true
           persist-credentials: false
       - name: Install
